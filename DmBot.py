@@ -41,13 +41,13 @@ assigned_followers = load_assigned_followers()
 # Remove already assigned followers from the available list
 followers = [f for f in followers if f not in assigned_followers]
 
-st.title("Random Follower DM Task")
+st.title("Random Username DM Task")
 
 if st.session_state.assigned_follower:
     st.success(f"Your assigned follower: **{st.session_state.assigned_follower}**")
 else:
     if followers:
-        if st.button("Get a Random Follower to DM"):
+        if st.button("Get a Random Username to DM"):
             chosen_follower = random.choice(followers)
             followers.remove(chosen_follower)
             save_followers(followers)  # Update available followers
